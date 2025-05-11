@@ -14,7 +14,7 @@ def get_user_input():
 def calc_average_temperature(numlist):
     average = sum(numlist)/len(numlist)
     print(average)
-    return
+    return average
 
 def calc_min_max_temperature(numlist):
     small = min(numlist)
@@ -22,17 +22,20 @@ def calc_min_max_temperature(numlist):
     values = [small, big]
     values = [int(i) for i in values]
     print(values)
-    return
+    return values
 
 
 def calc_median_temperature(numlist):
     import statistics
     med = statistics.median(numlist)
     print("Median = " + str(med))
-    return 
+    return med
+def main():
+    display_main_menu()
+    num_list = get_user_input()
+    calc_average_temperature(num_list)
+    calc_min_max_temperature(num_list)
+    calc_median_temperature(num_list)
 
-display_main_menu()
-num_list = get_user_input()
-calc_average_temperature(num_list)
-calc_min_max_temperature(num_list)
-calc_median_temperature(num_list)
+if __name__ == "__main__":
+    main()
